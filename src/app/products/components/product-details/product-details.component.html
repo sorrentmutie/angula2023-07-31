@@ -1,0 +1,17 @@
+<p>product-details works!</p>
+<div *ngIf="product">
+  {{product.name}}
+</div>
+
+<div class="form-group">
+  <label for="product.name">Nome</label>
+
+  <input [(ngModel)]="product!.name"   type="text" class="form-control"
+      id="product.name"  name="product.name">
+
+</div>
+
+
+<button class="btn btn-info" (click)="goBack()">OK</button>
+
+

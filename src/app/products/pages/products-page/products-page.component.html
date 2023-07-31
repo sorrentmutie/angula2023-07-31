@@ -1,0 +1,31 @@
+<div *ngIf="products && products.length > 0 && !selectedProduct; else bloccoElse">
+  <p>Numero di prodotti a catalogo: {{products.length}}</p>
+
+  <app-products-table [productsList]="products" (emitter)="cancelProduct($event)"
+    (emitterDetails)="showDetails($event)"></app-products-table>
+
+
+
+  <hr>
+  <div *ngIf="productsToBeOrdered">
+     <h3>Prodotti da riordinare</h3>
+     <app-products-table [productsList]="productsToBeOrdered"></app-products-table>
+  </div>
+
+</div>
+
+<div *ngIf="selectedProduct">
+  <app-product-details [product]="selectedProduct" (emitter)="goBack($event)"></app-product-details>
+</div>
+
+
+<button (click)="increment()">Incrementa Contatore</button>
+<p>{{service.getCounter()}}</p>
+
+<ng-template #bloccoElse>
+  <p>Non ci sono prodotti in catalogo</p>
+</ng-template>
+
+
+
+<app-first></app-first>
