@@ -1,6 +1,11 @@
+import { Injectable } from "@angular/core";
 import { Product } from "../models/product";
 import { Observable, of } from "rxjs";
 
+@Injectable({
+  providedIn: 'root'
+  }
+)
 export class ProductsService {
 
   private counter = 0;
