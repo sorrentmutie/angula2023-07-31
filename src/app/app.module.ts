@@ -13,6 +13,8 @@ import { ProductPipe } from './products/pipes/product.pipe';
 import { AddressPipe } from './products/pipes/address.pipe';
 import { ProductDetailsComponent } from './products/components/product-details/product-details.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { ReqresComponent } from './reqres/components/reqres/reqres.component';
 
 @NgModule({
   declarations: [
@@ -25,12 +27,14 @@ import { FormsModule } from '@angular/forms';
     ProductsTableComponent,
     ProductPipe,
     AddressPipe,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    ReqresComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
