@@ -15,6 +15,7 @@ import { ProductDetailsComponent } from './products/components/product-details/p
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ReqresComponent } from './reqres/components/reqres/reqres.component';
+import { CardComponent } from './reqres/components/card/card.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ReqresComponent } from './reqres/components/reqres/reqres.component';
     ProductPipe,
     AddressPipe,
     ProductDetailsComponent,
-    ReqresComponent
+    ReqresComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
