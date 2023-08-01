@@ -12,11 +12,18 @@ export class ProductsPageComponent {
   products: Product[] | undefined = undefined;
   productsToBeOrdered: Product[] | undefined = undefined;
   selectedProduct: Product | undefined = undefined;
-  service: ProductsService = new ProductsService();
 
-  constructor() {
-     this.products = this.service.getProducts();
-     this.productsToBeOrdered = this.service.getProductsToBeOrdered();
+  constructor(public service: ProductsService) {
+
+    this.service.getProductsAsObservable().subscribe(
+      (prodotti: Product[]) => this.products = prodotti);
+
+    this.service.getProductsToBeOrderedAsObservable().subscribe(
+      (prodotti: Product[]) => this.productsToBeOrdered = prodotti );
+
+
+     //this.products = this.service.getProducts();
+     // this.productsToBeOrdered = this.service.getProductsToBeOrdered();
    }
 
   cancelProduct(selectedProduct: Product): void {

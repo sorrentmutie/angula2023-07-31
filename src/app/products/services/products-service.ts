@@ -1,4 +1,5 @@
 import { Product } from "../models/product";
+import { Observable, of } from "rxjs";
 
 export class ProductsService {
 
@@ -31,5 +32,14 @@ export class ProductsService {
     ];
     return products;
   }
+
+  getProductsAsObservable(): Observable<Product[]> {
+    return of(this.getProducts());
+  }
+
+  getProductsToBeOrderedAsObservable(): Observable<Product[]> {
+    return of(this.getProductsToBeOrdered());
+  }
+
 
 }
