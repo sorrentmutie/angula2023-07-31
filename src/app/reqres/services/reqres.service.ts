@@ -11,8 +11,6 @@ export class ReqresService {
   constructor(private http: HttpClient) {   }
 
   getData(): Observable<ReqResData> {
-    return this.http.get<ReqResData>("https://reqres.in/api/users?delay=10");
+    return this.http.get<ReqResData>("https://reqres.in/api/users");
   }
-
-
 }

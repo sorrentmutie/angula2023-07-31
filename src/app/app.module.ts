@@ -16,6 +16,9 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ReqresComponent } from './reqres/components/reqres/reqres.component';
 import { CardComponent } from './reqres/components/card/card.component';
+import { MenuComponent } from './shared/menu/menu.component';
+import { FooterComponent } from './shared/footer/footer.component';
+import { NotFoundComponent } from './shared/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,10 @@ import { CardComponent } from './reqres/components/card/card.component';
     AddressPipe,
     ProductDetailsComponent,
     ReqresComponent,
-    CardComponent
+    CardComponent,
+    MenuComponent,
+    FooterComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
