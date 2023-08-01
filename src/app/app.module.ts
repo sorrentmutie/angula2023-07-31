@@ -13,12 +13,14 @@ import { ProductPipe } from './products/pipes/product.pipe';
 import { AddressPipe } from './products/pipes/address.pipe';
 import { ProductDetailsComponent } from './products/components/product-details/product-details.component';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ReqresComponent } from './reqres/components/reqres/reqres.component';
 import { CardComponent } from './reqres/components/card/card.component';
 import { MenuComponent } from './shared/menu/menu.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { NotFoundComponent } from './shared/not-found/not-found.component';
+import { FirstInterceptor } from './shared/interceptors/first.interceptor';
+import { SecondInterceptor } from './shared/interceptors/second.interceptor';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,10 @@ import { NotFoundComponent } from './shared/not-found/not-found.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: FirstInterceptor, multi: true},
+    { provide: HTTP_INTERCEPTORS, useClass: SecondInterceptor, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Product } from '../../models/product';
 import { ProductsService } from '../../services/products-service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-products-page',
@@ -11,9 +12,8 @@ export class ProductsPageComponent {
 
   products: Product[] | undefined = undefined;
   productsToBeOrdered: Product[] | undefined = undefined;
-  selectedProduct: Product | undefined = undefined;
 
-  constructor(public service: ProductsService) {
+  constructor(public service: ProductsService, private router: Router) {
 
     this.service.getProductsAsObservable().subscribe(
       (prodotti: Product[]) => this.products = prodotti);
@@ -33,12 +33,12 @@ export class ProductsPageComponent {
   }
 
   showDetails(product: Product): void {
-    this.selectedProduct = product;
+   // this.selectedProduct = product;
+   this.router.navigate(["products", product.id]);
   }
 
   goBack(message: string): void {
     console.log("Message received: " + message);
-    this.selectedProduct = undefined;
   }
 
   increment(): void {

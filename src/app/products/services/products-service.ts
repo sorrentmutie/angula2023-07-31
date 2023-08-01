@@ -46,5 +46,9 @@ export class ProductsService {
     return of(this.getProductsToBeOrdered());
   }
 
+  getProductById(id: number): Observable<Product | undefined> {
+      const product = this.getProducts().find(p => p.id === id);
+      return of(product);
+  }
 
 }

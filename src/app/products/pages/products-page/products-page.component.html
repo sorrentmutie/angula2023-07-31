@@ -1,4 +1,4 @@
-<div *ngIf="products && products.length > 0 && !selectedProduct; else bloccoElse">
+<div *ngIf="products && products.length > 0; else bloccoElse">
   <p>Numero di prodotti a catalogo: {{products.length}}</p>
 
   <app-products-table [productsList]="products" (emitter)="cancelProduct($event)"
@@ -12,10 +12,6 @@
      <app-products-table [productsList]="productsToBeOrdered"></app-products-table>
   </div>
 
-</div>
-
-<div *ngIf="selectedProduct">
-  <app-product-details [product]="selectedProduct" (emitter)="goBack($event)"></app-product-details>
 </div>
 
 
