@@ -7,7 +7,14 @@ import { Component } from '@angular/core';
 })
 export class WelcomeComponent {
 
-  constructor(){
-   // localStorage.setItem("token","1234567");
-  }
+  // onKeyUp(event: KeyboardEvent){
+  //  const target =  event.target as HTMLInputElement;
+  //  console.log(target.value);
+  // }
+
+
+  onKeyUp(value: string){
+    console.log(value);
+   }
+
 }

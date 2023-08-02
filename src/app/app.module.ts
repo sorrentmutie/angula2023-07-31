@@ -24,6 +24,7 @@ import { SecondInterceptor } from './shared/interceptors/second.interceptor';
 import { CustomersPageComponent } from './customers/components/customers-page/customers-page.component';
 import { LoginComponent } from './auth/components/login/login.component';
 import { WelcomeComponent } from './shared/components/welcome/welcome.component';
+import { HeroFormComponent } from './forms/components/hero-form/hero-form.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { WelcomeComponent } from './shared/components/welcome/welcome.component'
     NotFoundComponent,
     CustomersPageComponent,
     LoginComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    HeroFormComponent
   ],
   imports: [
     BrowserModule,

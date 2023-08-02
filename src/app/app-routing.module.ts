@@ -9,15 +9,17 @@ import { firstGuard } from './shared/guards/first.guard';
 import { CustomersPageComponent } from './customers/components/customers-page/customers-page.component';
 import { LoginComponent } from './auth/components/login/login.component';
 import { WelcomeComponent } from './shared/components/welcome/welcome.component';
+import { HeroFormComponent } from './forms/components/hero-form/hero-form.component';
 
 const routes: Routes = [
   {path: "products", component: ProductsPageComponent, canActivate: [firstGuard]},
   {path: "products/:id", component: ProductDetailsComponent, canActivate: [firstGuard]},
   {path: "customers",component: CustomersPageComponent, canActivate: [firstGuard]},
+  {path: "hero-form", component:HeroFormComponent},
   {path: "login", component:LoginComponent},
   {path: "welcome", component:WelcomeComponent},
   {path: "reqres", component: ReqresComponent, canActivate: [firstGuard]},
-  {path:"", redirectTo: "welcome", pathMatch: "full"},
+  {path:"", redirectTo: "hero-form", pathMatch: "full"},
   {path:"**",component: NotFoundComponent}
 ];
 
