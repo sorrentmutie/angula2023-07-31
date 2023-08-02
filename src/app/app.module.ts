@@ -22,6 +22,8 @@ import { NotFoundComponent } from './shared/not-found/not-found.component';
 import { FirstInterceptor } from './shared/interceptors/first.interceptor';
 import { SecondInterceptor } from './shared/interceptors/second.interceptor';
 import { CustomersPageComponent } from './customers/components/customers-page/customers-page.component';
+import { LoginComponent } from './auth/components/login/login.component';
+import { WelcomeComponent } from './shared/components/welcome/welcome.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { CustomersPageComponent } from './customers/components/customers-page/cu
     MenuComponent,
     FooterComponent,
     NotFoundComponent,
-    CustomersPageComponent
+    CustomersPageComponent,
+    LoginComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,

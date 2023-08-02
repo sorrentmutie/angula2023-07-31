@@ -17,5 +17,15 @@
         </li>
       </ul>
     </div>
+    <div *ngIf="!authService.isLogged; else logout">
+      <button class="btn btn-primary" (click)="onLogin()">Login</button>
+
+    </div>
   </div>
 </nav>
+
+<ng-template #logout>
+  <button class="btn btn-primary" (click)="onLogout()">Logout</button>
+  <span>{{authService.currentUser?.name}}</span>
+  <img style="width:50px" src="{{authService.currentUser?.picture}}">
+</ng-template>

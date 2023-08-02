@@ -7,13 +7,17 @@ import { ProductDetailsComponent } from './products/components/product-details/p
 import { ThirdGuard } from './shared/guards/third.guard';
 import { firstGuard } from './shared/guards/first.guard';
 import { CustomersPageComponent } from './customers/components/customers-page/customers-page.component';
+import { LoginComponent } from './auth/components/login/login.component';
+import { WelcomeComponent } from './shared/components/welcome/welcome.component';
 
 const routes: Routes = [
-  {path: "products", component: ProductsPageComponent},
-  {path: "products/:id", component: ProductDetailsComponent},
-  {path: "customers",component: CustomersPageComponent},
+  {path: "products", component: ProductsPageComponent, canActivate: [firstGuard]},
+  {path: "products/:id", component: ProductDetailsComponent, canActivate: [firstGuard]},
+  {path: "customers",component: CustomersPageComponent, canActivate: [firstGuard]},
+  {path: "login", component:LoginComponent},
+  {path: "welcome", component:WelcomeComponent},
   {path: "reqres", component: ReqresComponent, canActivate: [firstGuard]},
-  {path:"", redirectTo: "customers", pathMatch: "full"},
+  {path:"", redirectTo: "welcome", pathMatch: "full"},
   {path:"**",component: NotFoundComponent}
 ];
 
