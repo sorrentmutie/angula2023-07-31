@@ -3,6 +3,6 @@ import { CanActivateFn, Router } from '@angular/router';
 
 export const firstGuard: CanActivateFn = (route, state) => {
   const router = inject(Router);
-  router.navigate(['pippo']);
-  return false;
+ // router.navigate(['pippo']);
+  return true;
 };

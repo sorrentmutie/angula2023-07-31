@@ -21,6 +21,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { NotFoundComponent } from './shared/not-found/not-found.component';
 import { FirstInterceptor } from './shared/interceptors/first.interceptor';
 import { SecondInterceptor } from './shared/interceptors/second.interceptor';
+import { CustomersPageComponent } from './customers/components/customers-page/customers-page.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { SecondInterceptor } from './shared/interceptors/second.interceptor';
     CardComponent,
     MenuComponent,
     FooterComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    CustomersPageComponent
   ],
   imports: [
     BrowserModule,

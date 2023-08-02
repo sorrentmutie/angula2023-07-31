@@ -1,0 +1,8 @@
+<button (click)="onStart()">START</button>
+<button (click)="onStop()">STOP</button>
+
+<ul>
+  <li *ngFor="let customer of customers">
+    {{ customer.name }} - {{ customer.city }}
+  </li>
+</ul>

@@ -6,12 +6,14 @@ import { NotFoundComponent } from './shared/not-found/not-found.component';
 import { ProductDetailsComponent } from './products/components/product-details/product-details.component';
 import { ThirdGuard } from './shared/guards/third.guard';
 import { firstGuard } from './shared/guards/first.guard';
+import { CustomersPageComponent } from './customers/components/customers-page/customers-page.component';
 
 const routes: Routes = [
   {path: "products", component: ProductsPageComponent},
   {path: "products/:id", component: ProductDetailsComponent},
+  {path: "customers",component: CustomersPageComponent},
   {path: "reqres", component: ReqresComponent, canActivate: [firstGuard]},
-  {path:"", redirectTo: "products", pathMatch: "full"},
+  {path:"", redirectTo: "customers", pathMatch: "full"},
   {path:"**",component: NotFoundComponent}
 ];
 
